@@ -14,7 +14,7 @@
         <link rel="prev" href="../using_nixhelm/">
       
       
-        <link rel="next" href="../../library/">
+        <link rel="next" href="../assertions/">
       
       
       <link rel="icon" href="../../images/icon.svg">
@@ -479,6 +479,52 @@
   
   
     <li class="md-nav__item">
+      <a href="../object_transforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Object Transforms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../postprocessing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Post-processing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../using_nixhelm/" class="md-nav__link">
         
   
@@ -578,6 +624,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assertions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assertions & Warnings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -608,7 +677,7 @@
   
   
   <span class="md-ellipsis">
-    Reference
+    Developer Guide
     
   </span>
   
@@ -619,9 +688,100 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
+            Developer Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer_guide/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Architecture Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
             Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli_reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CLI Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -659,29 +819,6 @@
   
   <span class="md-ellipsis">
     Configuration Options
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../developer_guide/architecture/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Architectural Overview
     
   </span>
   
@@ -772,6 +909,11 @@
 <li><strong>Other manifests</strong>: All other manifests, such as Deployments, Services, and ConfigMaps, are applied last.</li>
 </ol>
 <p>It uses <code>kubectl apply --prune</code> to apply the manifests. The <code>--prune</code> flag is used to remove any resources from the cluster that are no longer defined in your nixidy configuration. Specific labels are added to all resources to make pruning safe and effective.</p>
+<p>If you use <a href="../postprocessing/">Post-processing</a>, any post-processing rules run here too, so <code>nixidy apply</code> deploys the same manifests as <code>nixidy switch</code>. Each object is streamed through its post-process command before being applied.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A post-processor command's output must be a valid Kubernetes manifest for <code>nixidy apply</code> to deploy it; a post-processor whose output only a GitOps controller can consume is <code>switch</code>-only. See <a href="../postprocessing/">Post-processing</a> for details.</p>
+</div>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
 <p>To apply the manifests for a specific environment, you can run:</p>
 <div class="highlight"><pre><span></span><code>nixidy<span class="w"> </span>apply<span class="w"> </span>.#dev
@@ -829,13 +971,13 @@
         
         
           
-          <a href="../../library/" class="md-footer__link md-footer__link--next" aria-label="Next: Library Functions">
+          <a href="../assertions/" class="md-footer__link md-footer__link--next" aria-label="Next: Assertions &amp; Warnings">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Library Functions
+                Assertions & Warnings
               </div>
             </div>
             <div class="md-footer__button md-icon">

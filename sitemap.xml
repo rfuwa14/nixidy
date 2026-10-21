@@ -5,6 +5,10 @@
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
+         <loc>https://nixidy.dev/cli_reference/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
          <loc>https://nixidy.dev/library/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
@@ -14,6 +18,10 @@
     </url>
     <url>
          <loc>https://nixidy.dev/developer_guide/architecture/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://nixidy.dev/user_guide/assertions/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
@@ -34,6 +42,14 @@
     </url>
     <url>
          <loc>https://nixidy.dev/user_guide/helm_charts/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://nixidy.dev/user_guide/object_transforms/</loc>
+         <lastmod>1980-01-01</lastmod>
+    </url>
+    <url>
+         <loc>https://nixidy.dev/user_guide/postprocessing/</loc>
          <lastmod>1980-01-01</lastmod>
     </url>
     <url>
